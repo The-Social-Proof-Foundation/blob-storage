@@ -1,0 +1,12 @@
+[package]
+name = "BlobStorage"
+version = "0.0.1"
+
+[dependencies]
+Mys = { local = "../mys-framework" }
+MoveStdlib = { local = "../move-stdlib" }
+
+[addresses]
+std = "0x1"
+mys = "0x2"
+blob_storage = "0x3"
