@@ -1,8 +1,8 @@
-# 📦 MYS Blob Storage
+# 📦 MySocial's Blob Storage
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-A decentralized, validator-based storage solution for the MYS blockchain. Store your data securely with fixed-duration commitments and certified availability.
+A decentralized, validator-based storage solution for the MySocial blockchain. Store your data securely with fixed-duration commitments and certified availability.
 
 ## 🌟 Features
 
@@ -16,7 +16,7 @@ A decentralized, validator-based storage solution for the MYS blockchain. Store 
 ## 📄 Documentation
 
 - [Architecture](./ARCHITECTURE.md): Detailed system architecture and economic model
-- [Integration Guide](./INTEGRATION.md): How to integrate this module with your MYS codebase
+- [Integration Guide](./INTEGRATION.md): How to integrate this module with the MySocial codebase
 
 ## 🧩 Key Components
 
@@ -85,15 +85,15 @@ blob_storage::system::register_storage_node(
 
 ## 💰 Cost Structure
 
-- **Storage Cost**: 1 MYS per MiB per epoch
-- **Write Cost**: 0.5 MYS per MiB per write operation
+- **Storage Cost**: 1 MySo per MiB per epoch
+- **Write Cost**: 0.5 MySo per MiB per write operation
 
-Example: Storing 1 GB for 1 year costs approximately 53,760 MYS.
+Example: Storing 1 GB for 1 year costs approximately 53,760 MySo.
 See the [Architecture](./ARCHITECTURE.md) document for detailed cost breakdowns.
 
 ## 🔄 System Integration
 
-The blob storage system automatically integrates with MYS epoch changes:
+The blob storage system automatically integrates with MySocial epoch changes:
 - Updates committee based on the current validator set
 - Distributes rewards to storage providers
 - Reclaims expired storage

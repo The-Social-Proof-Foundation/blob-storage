@@ -6,6 +6,7 @@
 module blob_storage::events {
 
 use mys::event;
+use mys::tx_context::TxContext;
 
 // === Event definitions ===
 
@@ -200,4 +201,33 @@ public(package) fun emit_deny_list_update(
 public(package) fun emit_deny_listed_blob_deleted(epoch: u32, blob_id: u256) {
     event::emit(DenyListBlobDeleted { epoch, blob_id })
 }
+
+/// Native function to query blob by ID
+/// Returns the blob metadata if found
+public native fun get_blob_metadata(
+    blob_id: u256,
+    ctx: &mut TxContext
+): Option<BlobRegistered>;
+
+/// Native function to list all blobs registered by a specific address
+/// Returns a list of blob IDs owned by the address
+public native fun get_address_blobs(
+    address: address,
+    limit: u64,
+    cursor: u256,
+    ctx: &mut TxContext
+): vector<u256>;
+
+/// Native function to get blob content size statistics
+/// Returns total size of blobs and count of blobs
+public native fun get_blob_stats(
+    ctx: &mut TxContext
+): (u64, u64);
+
+/// Native function to check if a blob is certified
+/// Returns true if the blob is certified
+public native fun is_blob_certified(
+    blob_id: u256,
+    ctx: &mut TxContext
+): bool;
 }
